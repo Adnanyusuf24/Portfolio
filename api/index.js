@@ -22,7 +22,7 @@ app.use(cookieParser());
 // View engine
 // View engine setup
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views')); // This sets the views directory to the 'views' folder at the root of your project
+app.set('views', path.join(__dirname, '../views')); // This sets the views directory to the 'views' folder at the root of your project
 
 // Database connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
