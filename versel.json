@@ -1,0 +1,56 @@
+{
+    "version": 2,
+    "routes": [
+      {
+        "src": "/Ecommerce",
+        "dest": "/EcommerceRoutes.js"
+      },
+      {
+        "src": "/Ecommerce/shop",
+        "dest": "/EcommerceRoutes.js"
+      },
+      {
+        "src": "/Ecommerce/contact",
+        "dest": "/EcommerceRoutes.js"
+      },
+      {
+        "src": "/Ecommerce/details/:productId",
+        "dest": "/EcommerceRoutes.js"
+      },
+      {
+        "src": "/Ecommerce/about",
+        "dest": "/EcommerceRoutes.js"
+      },
+      {
+        "src": "/SmoothieRecipeFinder",
+        "dest": "/SmoothieRoutes.js"
+      },
+      {
+        "src": "/SmoothieRecipeFinder/signup",
+        "dest": "/SmoothieRoutes.js"
+      },
+      {
+        "src": "/SmoothieRecipeFinder/login",
+        "dest": "/SmoothieRoutes.js"
+      },
+      {
+        "src": "/SmoothieRecipeFinder/logout",
+        "dest": "/SmoothieRoutes.js"
+      },
+      {
+        "src": "/SmoothieRecipeFinder/smoothies",
+        "dest": "/SmoothieRoutes.js"
+      },
+      {
+        "src": "/",
+        "dest": "/PortfolioRoutes.js"
+      }
+    ],
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/node"
+      }
+    ]
+  }
+  
