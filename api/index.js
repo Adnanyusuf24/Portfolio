@@ -6,10 +6,10 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 // Adjusting paths using the path module for clarity and reliability
-const SmoothieRoutes = require(path.join(__dirname, '../../routes/SmoothieRoutes'));
-const portfolioRoutes = require(path.join(__dirname, '../../routes/PortfolioRoutes'));
-const EcommerceRoutes = require(path.join(__dirname, '../../routes/E-commerceRoutes'));
-const { requireAuth, checkUser } = require(path.join(__dirname, '../../middleware/SmoothieMiddleware'));
+const SmoothieRoutes = require(path.join(__dirname, './routes/SmoothieRoutes'));
+const portfolioRoutes = require(path.join(__dirname, './routes/PortfolioRoutes'));
+const EcommerceRoutes = require(path.join(__dirname, './routes/E-commerceRoutes'));
+const { requireAuth, checkUser } = require(path.join(__dirname, './middleware/SmoothieMiddleware'));
 
 // Load environment variables
 require('dotenv').config({ path: path.join(__dirname, '../.env') });  // Adjust path to the .env file
