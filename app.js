@@ -22,11 +22,13 @@ app.set('view engine', 'ejs');
 // database connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    // Listen only when the database connection is successful
-    const PORT = process.env.PORT || 3000; // Vercel will provide the PORT via environment variable
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
+    // Conditionally start server based on environment
+    if (process.env.NODE_ENV !== 'production') {
+        const PORT = process.env.PORT || 3000; // Use PORT environment variable
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    }
   })
   .catch((err) => console.log('Database connection error:', err));
 
