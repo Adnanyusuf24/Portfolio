@@ -1,25 +1,28 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const SmoothieRoutes = require('../../routes/SmoothieRoutes');  // Moved up two directories
-const portfolioRoutes = require('../../routes/PortfolioRoutes');  // Moved up two directories
-const EcommerceRoutes = require('../../routes/E-commerceRoutes');  // Moved up two directories
+const path = require('path');
 const cookieParser = require('cookie-parser');
-const { requireAuth, checkUser } = require('../../middleware/SmoothieMiddleware');  // Moved up two directories
 
 const app = express();
 
-// Load environment variables
-require('dotenv').config({ path: '../.env' });  // Adjust path to the .env file if needed
+// Adjusting paths using the path module for clarity and reliability
+const SmoothieRoutes = require(path.join(__dirname, '../../routes/SmoothieRoutes'));
+const portfolioRoutes = require(path.join(__dirname, '../../routes/PortfolioRoutes'));
+const EcommerceRoutes = require(path.join(__dirname, '../../routes/E-commerceRoutes'));
+const { requireAuth, checkUser } = require(path.join(__dirname, '../../middleware/SmoothieMiddleware'));
 
-// middleware
-app.use(express.static('../public'));  // Adjust path to static files
+// Load environment variables
+require('dotenv').config({ path: path.join(__dirname, '../.env') });  // Adjust path to the .env file
+
+// Middleware
+app.use(express.static(path.join(__dirname, '../public')));  // Adjust path to static files
 app.use(express.json());
 app.use(cookieParser());
 
-// view engine
+// View engine
 app.set('view engine', 'ejs');
 
-// database connection
+// Database connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     // Conditionally start server based on environment
@@ -32,7 +35,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
   })
   .catch((err) => console.log('Database connection error:', err));
 
-// routes
+// Routes
 app.get('*', checkUser);
 app.use(SmoothieRoutes);
 app.use(portfolioRoutes);
