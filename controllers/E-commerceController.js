@@ -1,6 +1,8 @@
 module.exports.shop_get = (req, res) => {
-    res.render('E-commerceViews/shop')
-  }
+  console.log("Accessing shop route");
+  res.render('E-commerceViews/shop')
+}
+
   
   module.exports.about_get = (req, res) => {
     res.render('E-commerceViews/about')
