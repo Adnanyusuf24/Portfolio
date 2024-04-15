@@ -1,18 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const SmoothieRoutes = require('./routes/SmoothieRoutes');
-const portfolioRoutes = require('./routes/PortfolioRoutes');
-const EcommerceRoutes = require('./routes/E-commerceRoutes');
+const SmoothieRoutes = require('../../routes/SmoothieRoutes');  // Moved up two directories
+const portfolioRoutes = require('../../routes/PortfolioRoutes');  // Moved up two directories
+const EcommerceRoutes = require('../../routes/E-commerceRoutes');  // Moved up two directories
 const cookieParser = require('cookie-parser');
-const { requireAuth, checkUser } = require('./middleware/SmoothieMiddleware');
+const { requireAuth, checkUser } = require('../../middleware/SmoothieMiddleware');  // Moved up two directories
 
 const app = express();
 
 // Load environment variables
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });  // Adjust path to the .env file if needed
 
 // middleware
-app.use(express.static('public'));
+app.use(express.static('../public'));  // Adjust path to static files
 app.use(express.json());
 app.use(cookieParser());
 
