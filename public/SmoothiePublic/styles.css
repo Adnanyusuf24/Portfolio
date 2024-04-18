@@ -24,6 +24,8 @@ nav{
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 120px;
+  position: relative; 
+  z-index: 500;
 }
 nav ul{
   display: flex;
@@ -136,4 +138,98 @@ footer{
   text-align: center;
   margin-top: 120px;
   color: #aaa;
+}
+
+.nav-title {
+  position: relative;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.nav-links {
+  flex-basis: 20%; /* Adjust this percentage to give more space to the back button and links if needed */
+  display: flex;
+  justify-content: flex-start; /* Aligns the back button to the left */
+}
+
+.nav-links {
+  justify-content: flex-end; /* Aligns the links to the right */
+}
+
+div.backBtn {
+  width: 200px;
+  left: 25px;
+  top: 25px;
+  background-color: #f4f4f4;
+  transition: all 0.4s ease;
+  position: fixed;
+  cursor: pointer;
+}
+
+span.line {
+  bottom: auto;
+  right: auto;
+  top: auto;
+  left: auto;
+  background-color: #333;
+  border-radius: 10px;
+  width: 100%;
+  left: 0px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  transition: width 0.2s ease 0.1s, left 0.2s ease, transform 0.2s ease 0.3s, background-color 0.2s ease;
+  z-index: 1000;
+}
+
+span.tLine {
+  top: 0px;
+}
+
+span.mLine {
+  top: 13px;
+  opacity: 0;
+}
+
+span.bLine {
+  top: 26px;
+}
+
+.label {
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.4s ease;
+  font-size: 1em;
+}
+
+div.backBtn:hover span.label {
+  left: 25px
+}
+
+div.backBtn:hover span.line {
+  left: -10px;
+  height: 5px;
+  background-color: black;
+}
+
+div.backBtn:hover span.tLine {
+  width: 25px;
+  transform: rotate(-45deg);
+  left: -15px;
+  top: 6px;
+}
+
+div.backBtn:hover span.mLine {
+  opacity: 1;
+  width: 30px;
+}
+
+div.backBtn:hover span.bLine {
+  width: 25px;
+  transform: rotate(45deg);
+  left: -15px;
+  top: 20px;
 }

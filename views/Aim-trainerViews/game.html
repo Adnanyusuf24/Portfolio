@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aim Trainer Game</title>
+    <link rel="stylesheet" type="text/css" href="/Aim-trainerPublic/css/styles.css">
+</head>
+<body>
+    <div class="game-info">
+        <div>Score: <span id="score">0</span></div>
+        <div>Time Left: <span id="timeLeft">30</span> seconds</div>
+    </div>
+    <div id="gameContainer" class="container">
+        <!-- Targets will be added here dynamically -->
+    </div>
+    <button id="startButton" onclick="startGame()">Start Game</button>
+
+ <!-- Custom Alert Overlay and Box -->
+ <div id="simpleModal" class="simple-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close-button">&times;</span>
+            <h2>Game Over</h2>
+        </div>
+        <div class="modal-body">
+            Your score: <span id="simpleModalScore"></span>
+        </div>
+        <div class="modal-footer">
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+ 
+
+
+
+    <script src="/Aim-trainerPublic/js/game.js"></script>
+</body>
+
+</html>

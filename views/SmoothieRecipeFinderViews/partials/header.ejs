@@ -7,8 +7,16 @@
 </head>
 <body>
   <nav>
-    <h1><a href="/SmoothieRecipeFinder/">Real Ninjas Smoothies</a></h1>
-    <ul>
+    <a href="/" style="text-decoration: none; color: inherit;">
+      <div class="backBtn">
+          <span class="line tLine"></span>
+          <span class="line mLine"></span>
+          <span class="label">Back to Portfolio</span>
+          <span class="line bLine"></span>
+      </div>
+  </a>
+    <h1 class="nav-title"><a href="/SmoothieRecipeFinder/">Real Ninjas Smoothies</a></h1>
+  <ul class="nav-links">
       <% if (user) { %>
         <li><a href="/SmoothieRecipeFinder/logout">Log out</a></li>
       <% } else { %>
