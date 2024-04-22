@@ -11,6 +11,7 @@ const portfolioRoutes = require(path.join(__dirname, './routes/PortfolioRoutes')
 const EcommerceRoutes = require(path.join(__dirname, './routes/E-commerceRoutes'));
 const { requireAuth, checkUser } = require(path.join(__dirname, './middleware/SmoothieMiddleware'));
 const aimTrainerRoutes = require(path.join(__dirname, './routes/aim-trainer'));
+const tictactoeRoutes = require(path.join(__dirname, './routes/tictactoe'));
 
 // Load environment variables
 require('dotenv').config({ path: path.join(__dirname, '../.env') });  // Adjust path to the .env file
@@ -44,3 +45,4 @@ app.use(SmoothieRoutes);
 app.use(portfolioRoutes);
 app.use(EcommerceRoutes);
 app.use(aimTrainerRoutes);
+app.use(tictactoeRoutes);
