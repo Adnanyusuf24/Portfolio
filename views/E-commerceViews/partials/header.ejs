@@ -146,4 +146,24 @@
         e.preventDefault();
         // Signup form submission logic here
     });
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('.nav__link');
+
+        // Get current page URL without the domain name
+        const currentPath = window.location.pathname;
+
+        // Loop through each link and set the 'active-link' class if the href matches the current path
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                // Add 'active-link' class to the matching link
+                link.classList.add('active-link');
+            } else {
+                // Remove 'active-link' class if it exists
+                link.classList.remove('active-link');
+            }
+        });
+    });
+</script>
 </script>

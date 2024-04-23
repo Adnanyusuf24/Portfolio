@@ -18,6 +18,9 @@ html {
 p {
   color: rgb(85, 85, 85);
 }
+h3 {
+  color: rgb(85, 85, 85);
+}
 
 /* TRANSITION */
 
@@ -149,17 +152,28 @@ a:hover {
 /* SECTIONS */
 
 section {
-  padding-top: 4vh;
-  height: 96vh;
-  margin: 0 10rem;
+  padding-top: 3vh;  
+  padding-bottom: 3vh;
+  margin: 0 10rem; 
   box-sizing: border-box;
   min-height: fit-content;
 }
 
 .section-container {
   display: flex;
+  flex-wrap: wrap;
 }
+@media (max-width: 768px) {
+  section {
+    margin: 0 2rem;  /* Reduced side margins for smaller screens */
+    padding-top: 1vh; /* Less vertical padding on smaller screens */
+    padding-bottom: 1vh;
+  }
 
+  .section-container {
+    flex-direction: column; /* Stack children vertically on small screens */
+  }
+}
 /* PROFILE SECTION */
 
 #profile {
@@ -185,15 +199,15 @@ section {
   font-weight: 600;
 }
 
-.section__text__p1 {
-  text-align: center;
-}
 
 .section__text__p2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
 }
 
+.section__text__p1 {
+  text-align: center;
+}
 .title {
   font-size: 3rem;
   text-align: center;
@@ -268,9 +282,9 @@ section {
 }
 
 .about-containers {
-  gap: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .about-details-container {
@@ -304,7 +318,7 @@ section {
 }
 
 .section-container {
-  gap: 4rem;
+  gap: 2rem;
   height: 80%;
 }
 
